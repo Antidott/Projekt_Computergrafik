@@ -1,19 +1,21 @@
-[gd_scene load_steps=5 format=3 uid="uid://cf2ev6jixv7vq"]
+[gd_scene load_steps=7 format=3 uid="uid://cf2ev6jixv7vq"]
 
 [ext_resource type="Texture2D" uid="uid://d0yvapa3f6unb" path="res://Fire/firetest.png" id="1_5e0b4"]
+[ext_resource type="Texture2D" uid="uid://n4tt0tp8jhva" path="res://Licht.webp" id="2_td3gp"]
+[ext_resource type="Texture2D" uid="uid://cyfu01r6bbels" path="res://Licht1.jpg" id="3_xpvdj"]
+[ext_resource type="Texture2D" uid="uid://dh3mk1pysuhe3" path="res://Licht2.jpg" id="4_jm1y4"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ogj24"]
 
-[sub_resource type="Gradient" id="Gradient_n348v"]
-offsets = PackedFloat32Array(0, 0.181818)
-colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_wymjj"]
-gradient = SubResource("Gradient_n348v")
-width = 53
-height = 59
-fill = 1
-fill_from = Vector2(0.5, 0.5)
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_mk64d"]
+frames = 3
+speed_scale = 30.0
+frame_0/texture = ExtResource("2_td3gp")
+frame_0/duration = 3.0
+frame_1/texture = ExtResource("3_xpvdj")
+frame_1/duration = 3.0
+frame_2/texture = ExtResource("4_jm1y4")
+frame_2/duration = 3.0
 
 [node name="Fire" type="Node2D"]
 
@@ -30,6 +32,6 @@ shape = SubResource("CapsuleShape2D_ogj24")
 
 [node name="PointLight2D" type="PointLight2D" parent="CharacterBody2D"]
 position = Vector2(1.00002, -3.49999)
-scale = Vector2(6.75472, 3.33898)
-color = Color(1, 1, 0, 1)
-texture = SubResource("GradientTexture2D_wymjj")
+scale = Vector2(1.012, 0.5)
+shadow_enabled = true
+texture = SubResource("AnimatedTexture_mk64d")
