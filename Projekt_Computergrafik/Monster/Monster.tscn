@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://vy7ipoei7yrd"]
+
+[ext_resource type="Texture2D" uid="uid://cphok0mh6uimy" path="res://Monster/testsmiley.png" id="1_iqbvf"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_kh84d"]
+radius = 28.0
+
+[node name="Monster" type="Node2D"]
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+shape = SubResource("CircleShape2D_kh84d")
+
+[node name="Testsmiley" type="Sprite2D" parent="CharacterBody2D"]
+position = Vector2(-3.8147e-06, 0)
+scale = Vector2(0.620879, 0.594118)
+texture = ExtResource("1_iqbvf")

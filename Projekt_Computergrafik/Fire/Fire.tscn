@@ -1,0 +1,35 @@
+[gd_scene load_steps=5 format=3 uid="uid://cf2ev6jixv7vq"]
+
+[ext_resource type="Texture2D" uid="uid://d0yvapa3f6unb" path="res://Fire/firetest.png" id="1_5e0b4"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ogj24"]
+
+[sub_resource type="Gradient" id="Gradient_n348v"]
+offsets = PackedFloat32Array(0, 0.181818)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_wymjj"]
+gradient = SubResource("Gradient_n348v")
+width = 53
+height = 59
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+
+[node name="Fire" type="Node2D"]
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+
+[node name="Firetest" type="Sprite2D" parent="CharacterBody2D"]
+position = Vector2(9.53674e-07, -1)
+scale = Vector2(0.126623, 0.120155)
+texture = ExtResource("1_5e0b4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+position = Vector2(0, -1)
+shape = SubResource("CapsuleShape2D_ogj24")
+
+[node name="PointLight2D" type="PointLight2D" parent="CharacterBody2D"]
+position = Vector2(1.00002, -3.49999)
+scale = Vector2(6.75472, 3.33898)
+color = Color(1, 1, 0, 1)
+texture = SubResource("GradientTexture2D_wymjj")
