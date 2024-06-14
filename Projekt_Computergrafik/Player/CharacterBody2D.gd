@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-@export var speed = 100
+@export var speed = 200
 
 var target = position
 
@@ -8,7 +8,6 @@ func _input(event):
 	if event.is_action_pressed("click"):
 		target = get_global_mouse_position()
 		print(position)
-		print(target)
 
 func _physics_process(delta):
 	velocity = position.direction_to(target) * speed
