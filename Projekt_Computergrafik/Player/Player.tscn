@@ -11,11 +11,19 @@ size = Vector2(16, 14)
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
 script = ExtResource("1_g7dwg")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
-position = Vector2(0, -1)
-shape = SubResource("RectangleShape2D_j6h8g")
-
 [node name="Frog" type="Sprite2D" parent="CharacterBody2D"]
 position = Vector2(-1.90735e-06, -1)
 scale = Vector2(0.085, 0.07)
 texture = ExtResource("2_u3q2c")
+
+[node name="Area2D" type="Area2D" parent="CharacterBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D/Area2D"]
+position = Vector2(0, -1)
+shape = SubResource("RectangleShape2D_j6h8g")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+position = Vector2(0, -1)
+shape = SubResource("RectangleShape2D_j6h8g")
+
+[connection signal="body_entered" from="CharacterBody2D/Area2D" to="CharacterBody2D" method="_on_Area2D_body_entered"]
