@@ -15,10 +15,10 @@ position = Vector2(0, 2)
 scale = Vector2(1151, 636)
 texture = SubResource("CanvasTexture_32313")
 
-[node name="Monster3" parent="." instance=ExtResource("3_gd3vx")]
+[node name="Monster3" parent="." groups=["enemies"] instance=ExtResource("3_gd3vx")]
 position = Vector2(-452, -84)
 
-[node name="Monster2" parent="." instance=ExtResource("3_gd3vx")]
+[node name="Monster2" parent="." groups=["enemies"] instance=ExtResource("3_gd3vx")]
 position = Vector2(321, -223)
 
 [node name="Fire" parent="." instance=ExtResource("2_wanho")]
@@ -39,7 +39,7 @@ position = Vector2(-459, -224)
 [node name="Fire3" parent="." instance=ExtResource("2_wanho")]
 position = Vector2(453, 276)
 
-[node name="Monster" parent="." instance=ExtResource("3_gd3vx")]
+[node name="Monster" parent="." groups=["enemies"] instance=ExtResource("3_gd3vx")]
 position = Vector2(-301, 151)
 
 [node name="GameController" type="Node" parent="."]
