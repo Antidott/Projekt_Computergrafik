@@ -11,7 +11,7 @@ func _ready():
 	score_timer = Timer.new()
 	score_timer.set_wait_time(1.0)
 	score_timer.set_one_shot(false)
-	score_timer.connect("timeout", self, "_on_score_timer_timeout")
+	score_timer.connect("timeout", self._on_score_timer_timeout())
 	add_child(score_timer)
 	score_timer.start()
 
