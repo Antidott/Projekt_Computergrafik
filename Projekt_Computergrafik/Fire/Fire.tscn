@@ -1,15 +1,27 @@
-[gd_scene load_steps=7 format=3 uid="uid://cf2ev6jixv7vq"]
+[gd_scene load_steps=10 format=3 uid="uid://cf2ev6jixv7vq"]
 
-[ext_resource type="Texture2D" uid="uid://d0yvapa3f6unb" path="res://Fire/firetest.png" id="1_5e0b4"]
+[ext_resource type="Texture2D" uid="uid://4aiubp5qdgfk" path="res://Fire3.PNG" id="1_iw356"]
+[ext_resource type="Texture2D" uid="uid://b3a6h71ajsikk" path="res://Fire2.PNG" id="2_ho7ow"]
 [ext_resource type="Texture2D" uid="uid://n4tt0tp8jhva" path="res://Licht.webp" id="2_td3gp"]
+[ext_resource type="Texture2D" uid="uid://c6chphh6h8im0" path="res://Fire1.PNG" id="3_aa8n3"]
 [ext_resource type="Texture2D" uid="uid://cyfu01r6bbels" path="res://Licht1.jpg" id="3_xpvdj"]
 [ext_resource type="Texture2D" uid="uid://dh3mk1pysuhe3" path="res://Licht2.jpg" id="4_jm1y4"]
+
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_uqjl0"]
+frames = 3
+speed_scale = 20.0
+frame_0/texture = ExtResource("3_aa8n3")
+frame_0/duration = 3.0
+frame_1/texture = ExtResource("2_ho7ow")
+frame_1/duration = 3.0
+frame_2/texture = ExtResource("1_iw356")
+frame_2/duration = 3.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ogj24"]
 
 [sub_resource type="AnimatedTexture" id="AnimatedTexture_mk64d"]
 frames = 3
-speed_scale = 30.0
+speed_scale = 20.0
 frame_0/texture = ExtResource("2_td3gp")
 frame_0/duration = 3.0
 frame_1/texture = ExtResource("3_xpvdj")
@@ -22,16 +34,12 @@ frame_2/duration = 3.0
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
 
 [node name="Firetest" type="Sprite2D" parent="CharacterBody2D"]
-position = Vector2(9.53674e-07, -1)
 scale = Vector2(0.126623, 0.120155)
-texture = ExtResource("1_5e0b4")
+texture = SubResource("AnimatedTexture_uqjl0")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
-position = Vector2(0, -1)
 shape = SubResource("CapsuleShape2D_ogj24")
 
 [node name="PointLight2D" type="PointLight2D" parent="CharacterBody2D"]
-position = Vector2(1.00002, -3.49999)
-scale = Vector2(1.012, 0.5)
 shadow_enabled = true
 texture = SubResource("AnimatedTexture_mk64d")
