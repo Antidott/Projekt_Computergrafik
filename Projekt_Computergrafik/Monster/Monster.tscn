@@ -3,11 +3,11 @@
 [ext_resource type="Script" path="res://Monster/CharacterBody2D.gd" id="1_ec7c6"]
 [ext_resource type="Texture2D" uid="uid://cphok0mh6uimy" path="res://Monster/testsmiley.png" id="1_iqbvf"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_msafr"]
-size = Vector2(16, 14)
+[sub_resource type="CircleShape2D" id="CircleShape2D_ncpop"]
+radius = 27.0185
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_kh84d"]
-radius = 28.0
+[sub_resource type="CircleShape2D" id="CircleShape2D_gaial"]
+radius = 28.2843
 
 [node name="Monster" type="Node2D"]
 
@@ -18,10 +18,10 @@ script = ExtResource("1_ec7c6")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D/Area2D"]
 position = Vector2(0, -1)
-shape = SubResource("RectangleShape2D_msafr")
+shape = SubResource("CircleShape2D_ncpop")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
-shape = SubResource("CircleShape2D_kh84d")
+shape = SubResource("CircleShape2D_gaial")
 
 [node name="Testsmiley" type="Sprite2D" parent="CharacterBody2D"]
 position = Vector2(-3.8147e-06, 0)
