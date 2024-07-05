@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://cklwgw5hbe8n5"]
+[gd_scene load_steps=10 format=3 uid="uid://cklwgw5hbe8n5"]
 
 [ext_resource type="PackedScene" uid="uid://cx2el55fore5j" path="res://Player/Player.tscn" id="1_edm16"]
 [ext_resource type="PackedScene" uid="uid://cf2ev6jixv7vq" path="res://Fire/Fire.tscn" id="2_wanho"]
@@ -6,6 +6,18 @@
 [ext_resource type="Script" path="res://GameController.gd" id="4_s5tgp"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_32313"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pi8nf"]
+size = Vector2(1293, 55)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w8d1m"]
+size = Vector2(55.5, 692)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bodjk"]
+size = Vector2(57, 689)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_51d3x"]
+size = Vector2(1154, 48)
 
 [node name="World" type="Node2D"]
 
@@ -15,15 +27,6 @@ position = Vector2(0, 2)
 scale = Vector2(1151, 636)
 texture = SubResource("CanvasTexture_32313")
 
-[node name="Monster3" parent="." groups=["enemies"] instance=ExtResource("3_gd3vx")]
-position = Vector2(-452, -84)
-
-[node name="Monster2" parent="." groups=["enemies"] instance=ExtResource("3_gd3vx")]
-position = Vector2(321, -223)
-
-[node name="Fire" parent="." instance=ExtResource("2_wanho")]
-position = Vector2(281, -108)
-
 [node name="Player" parent="." instance=ExtResource("1_edm16")]
 
 [node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
@@ -32,12 +35,6 @@ blend_mode = 1
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(-1, 8)
-
-[node name="Fire2" parent="." instance=ExtResource("2_wanho")]
-position = Vector2(-459, -224)
-
-[node name="Fire3" parent="." instance=ExtResource("2_wanho")]
-position = Vector2(453, 276)
 
 [node name="Monster" parent="." groups=["enemies"] instance=ExtResource("3_gd3vx")]
 position = Vector2(-301, 151)
@@ -52,3 +49,32 @@ offset_right = 576.0
 offset_bottom = -275.0
 justification_flags = 161
 uppercase = true
+
+[node name="Area2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(17.5, 348.5)
+shape = SubResource("RectangleShape2D_pi8nf")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-599.75, -21)
+shape = SubResource("RectangleShape2D_w8d1m")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(597, 2)
+shape = SubResource("RectangleShape2D_bodjk")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(5, -335)
+shape = SubResource("RectangleShape2D_51d3x")
+
+[node name="FireList" type="Node2D" parent="."]
+
+[node name="Fire2" parent="FireList" instance=ExtResource("2_wanho")]
+position = Vector2(-459, -224)
+
+[node name="Fire" parent="FireList" instance=ExtResource("2_wanho")]
+position = Vector2(281, -108)
+
+[node name="Fire3" parent="FireList" instance=ExtResource("2_wanho")]
+position = Vector2(453, 276)
