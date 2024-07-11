@@ -39,6 +39,12 @@ position = Vector2(-1, 8)
 [node name="Monster" parent="." groups=["enemies"] instance=ExtResource("3_gd3vx")]
 position = Vector2(-301, 151)
 
+[node name="Monster2" parent="." groups=["enemies"] instance=ExtResource("3_gd3vx")]
+position = Vector2(-466, 23)
+
+[node name="Monster3" parent="." groups=["enemies"] instance=ExtResource("3_gd3vx")]
+position = Vector2(-448, 227)
+
 [node name="GameController" type="Node" parent="."]
 script = ExtResource("4_s5tgp")
 
