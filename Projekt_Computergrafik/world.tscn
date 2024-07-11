@@ -84,3 +84,5 @@ position = Vector2(281, -108)
 
 [node name="Fire3" parent="FireList" instance=ExtResource("2_wanho")]
 position = Vector2(453, 276)
+
+[node name="schwarm" type="Node2D" parent="."]
