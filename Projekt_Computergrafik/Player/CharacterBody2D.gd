@@ -15,6 +15,7 @@ func _ready():
 
 # Function to check for collision with enemy
 func _on_Area2D_body_entered(body):
+	print("test")
 	if body != targetPlayer:
 		die()
 
@@ -42,5 +43,10 @@ func _input(event):
 
 func _physics_process(delta):
 	velocity = position.direction_to(target) * speed
-	if position.distance_to(target) > 10:
-		move_and_slide()
+	if position.distance_to(target) < 10:#removes shaking Bug
+		return
+	var collide = move_and_collide(velocity * delta)
+	#move_and_slide()
+	if collide:
+		if collide.get_collider().get_script() != null:
+			die()
