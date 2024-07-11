@@ -1,0 +1,16 @@
+[gd_resource type="ParticleProcessMaterial" format=3 uid="uid://d1u1iy62bjq75"]
+
+[resource]
+lifetime_randomness = 1.0
+particle_flag_disable_z = true
+angle_min = -187.9
+angle_max = 223.6
+inherit_velocity_ratio = 1.0
+spread = 78.54
+initial_velocity_min = 93.66
+initial_velocity_max = 211.66
+orbit_velocity_min = 1.019
+orbit_velocity_max = 2.0
+gravity = Vector3(0, 98, 0)
+turbulence_noise_strength = 6.76
+collision_mode = 2
