@@ -1,11 +1,9 @@
-[gd_scene load_steps=12 format=3 uid="uid://cklwgw5hbe8n5"]
+[gd_scene load_steps=10 format=3 uid="uid://cklwgw5hbe8n5"]
 
 [ext_resource type="PackedScene" uid="uid://cx2el55fore5j" path="res://Player/Player.tscn" id="1_edm16"]
 [ext_resource type="PackedScene" uid="uid://cf2ev6jixv7vq" path="res://Fire/Fire.tscn" id="2_wanho"]
 [ext_resource type="PackedScene" uid="uid://vy7ipoei7yrd" path="res://Monster/Monster.tscn" id="3_gd3vx"]
 [ext_resource type="Script" path="res://GameController.gd" id="4_s5tgp"]
-[ext_resource type="Texture2D" uid="uid://bx4c3dkm4vewu" path="res://FirePixel.png" id="5_ptyaf"]
-[ext_resource type="Material" uid="uid://d1u1iy62bjq75" path="res://Fire.tres" id="5_rwpxq"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_32313"]
 
@@ -81,20 +79,8 @@ shape = SubResource("RectangleShape2D_51d3x")
 [node name="Fire2" parent="FireList" instance=ExtResource("2_wanho")]
 position = Vector2(-459, -224)
 
-[node name="GPUParticles2D" type="GPUParticles2D" parent="FireList/Fire2"]
-process_material = ExtResource("5_rwpxq")
-texture = ExtResource("5_ptyaf")
-
 [node name="Fire" parent="FireList" instance=ExtResource("2_wanho")]
 position = Vector2(281, -108)
 
-[node name="GPUParticles2D" type="GPUParticles2D" parent="FireList/Fire"]
-process_material = ExtResource("5_rwpxq")
-texture = ExtResource("5_ptyaf")
-
 [node name="Fire3" parent="FireList" instance=ExtResource("2_wanho")]
 position = Vector2(453, 276)
-
-[node name="GPUParticles2D" type="GPUParticles2D" parent="FireList/Fire3"]
-process_material = ExtResource("5_rwpxq")
-texture = ExtResource("5_ptyaf")

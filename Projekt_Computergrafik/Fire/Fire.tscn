@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://cf2ev6jixv7vq"]
+[gd_scene load_steps=12 format=3 uid="uid://cf2ev6jixv7vq"]
 
 [ext_resource type="Texture2D" uid="uid://4aiubp5qdgfk" path="res://Fire3.PNG" id="1_iw356"]
 [ext_resource type="Texture2D" uid="uid://b3a6h71ajsikk" path="res://Fire2.PNG" id="2_ho7ow"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://c6chphh6h8im0" path="res://Fire1.PNG" id="3_aa8n3"]
 [ext_resource type="Texture2D" uid="uid://cyfu01r6bbels" path="res://Licht1.jpg" id="3_xpvdj"]
 [ext_resource type="Texture2D" uid="uid://dh3mk1pysuhe3" path="res://Licht2.jpg" id="4_jm1y4"]
+[ext_resource type="Texture2D" uid="uid://bx4c3dkm4vewu" path="res://FirePixel.png" id="8_eybrv"]
 
 [sub_resource type="AnimatedTexture" id="AnimatedTexture_uqjl0"]
 frames = 3
@@ -29,6 +30,12 @@ frame_1/duration = 3.0
 frame_2/texture = ExtResource("4_jm1y4")
 frame_2/duration = 3.0
 
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_ffqm5"]
+particle_flag_disable_z = true
+gravity = Vector3(0, -95, 0)
+turbulence_enabled = true
+turbulence_noise_strength = 20.0
+
 [node name="Fire" type="Node2D"]
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
@@ -43,3 +50,8 @@ shape = SubResource("CapsuleShape2D_ogj24")
 [node name="PointLight2D" type="PointLight2D" parent="CharacterBody2D"]
 shadow_enabled = true
 texture = SubResource("AnimatedTexture_mk64d")
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="CharacterBody2D"]
+amount = 1
+process_material = SubResource("ParticleProcessMaterial_ffqm5")
+texture = ExtResource("8_eybrv")
